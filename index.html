@@ -1,10 +1,24 @@
 <html>
     <head>
+        <script src='jquery-3.2.1.min.js'></script>
+        <script src='script.js'></script>
     </head>
     <body>
-        <div id='topBox' class='tobBox'>
+        <div id='topBox' class='topBox'>
             
         </div>
+        <div id='newIdea' class='newIdea'>
+            <form action="add.php" method="post">
+                muu, mikä?
+                <input type="text" name="idea" id="newIdea">
+                <input type="submit">
+            </form>
+        </div>
+        <form action="localhost/welcome.php" method="post">
+            Name: <input type="text" name="name"><br>
+            E-mail: <input type="text" name="email"><br>
+            <input type="submit">
+        </form>
     </body>
 </html>
 
