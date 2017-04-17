@@ -1,4 +1,7 @@
 var xhttp = new XMLHttpRequest();
+if (window.localStorage.vodka == undefined){
+    window.localStorage.vodka = +new Date();
+}
 function loadVotes(){
     $.getJSON( "http://veli.vodka:8080/api", function( data ) {
         $(".topBox").empty();
@@ -27,7 +30,7 @@ function voteClicked(event){
             loadVotes();
         }
     }
-    xhttp.send("idea=" + event.target.dataset.id)
+    xhttp.send("idea=" + event.target.dataset.id + "&idi=" + window.localStorage.vodka);
 };
 function newVoteClicked(){
     console.log($("#idea").val());
