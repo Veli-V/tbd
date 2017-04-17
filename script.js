@@ -6,10 +6,11 @@ function loadVotes(){
     $.getJSON( "http://veli.vodka:8080/api", function( data ) {
         $(".topBox").empty();
         var items = [];
-        //data.sort(function(a,b){return a.votes - b.votes});
-        //data.reverse();
+        data.sort(function(a,b){return a.votes - b.votes});
+        data.reverse();
         $.each( data, function( i, item) {
-            items.push( "<button id='" +data[i].idea + "' class='foo' data-id=" +data[i].idea + " style='width: calc(100px + " + data[i].votes * 10 + "px)' >" + data[i].idea + ": " + data[i].votes + "</button> </br>" );
+            items.push( "<li><div id='" +data[i].idea + "' class='foo' data-id=" + data[i].idea + " style='width: " + 100 * data[i].votes / data[0].votes + "%;' >" + data[i].votes + "</div><div>" + data[i].idea + "</div></li>" );
+            console.log(data[i].votes + " / " + data[1].votes + " * " + 100 + " = " + (data[i].votes / data[1].votes * 100));
         });
         $( "<ul/>", {
             "class": "votes-list",
