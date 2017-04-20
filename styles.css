@@ -167,3 +167,7 @@ body {
   cursor: pointer;
   background: #CCEC00;
 }
+
+.info {
+  text-align: center;
+}

@@ -43,6 +43,17 @@ function newVoteClicked(){
         }
     }
     xhttp.send("idea=" + $("#idea").val())
+    $("#idea").val('');
+};
+
+function keyPress(e){
+    if (e.keycode == 13 || e.which == 13) {
+        newVoteClicked();
+        console.log("vittua");
+        return false;
+    }
+    console.log("mitäs!!!!!!");
+    return true;
 };
 
 window.onload = loadVotes;

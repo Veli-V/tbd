@@ -15,14 +15,15 @@
 </head>
 
 <body>
+  <div id='info' class='info'>
+      Huraa! Olet eksynyt TBD-radion äänestysAiheKilkkeeseen! Täällä voit näppärästi ehdottaa uusia aiheita ohjelmaan ja äänestää suosikkiasi. Juontajat sitten vetää showta aina eniten ääniä saaneesta aiheesta.
+  </div>
   <div id='topBox' class='topBox'>
   </div>
   <div id='newIdea' class='newIdea'>
-    <form method="post">
       Muu, mikä?
-      <input type="text" name="idea" id="idea">
+      <input type="text" name="idea" id="idea" onkeypress="return keyPress(event)">
       <input type="button" onclick="newVoteClicked()" value="+">
-    </form>
   </div>
 </body>
 
